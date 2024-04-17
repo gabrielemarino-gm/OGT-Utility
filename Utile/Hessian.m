@@ -1,4 +1,4 @@
-clear; close all; clc;
+close all; clear; clc;
 
 syms x1 x2 x3 p a
 f = a*(x1+x2-x3)+(1-a)*(x1-x3);

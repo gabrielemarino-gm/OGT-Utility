@@ -36,12 +36,10 @@ C = 10 ;
 % define the problem
 Q = [ 1              zeros(1,2*l+1)
       zeros(2*l+1,1) zeros(2*l+1) ];
-  
 c = [ 0 ; 0 ; C*ones(2*l,1)]; 
 
 D = [-x -ones(l,1) -eye(l)   zeros(l)
       x  ones(l,1)  zeros(l) -eye(l)];
-  
 d = epsilon*ones(2*l,1) + [-y;y];
 
 % solve the problem

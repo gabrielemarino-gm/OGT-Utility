@@ -1,4 +1,4 @@
-clear; close all; clc;
+close all; clear; clc;
 
 a = 1; % Coefficiente del termine x^2
 b = 2; % Coefficiente del termine x

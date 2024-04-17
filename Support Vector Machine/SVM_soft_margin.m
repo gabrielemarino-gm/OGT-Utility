@@ -80,7 +80,7 @@ for i = 1 : l
     end
 end
 
-% solve the problem
+% Solve the problem
 la = quadprog(Q, -ones(l,1), [ ], [ ], y’, 0, zeros(l,1), C*ones(l,1));
 % compute vector w
 w = zeros(2,1); 

@@ -1,4 +1,4 @@
-clc, clear, clear all;
+close all; clear; clc;
 
 syms x1 x2 x3 l1 l2 l3 alpha1
 eq = 2*alpha1*x1 - 1 + alpha1 - l1 == 0;

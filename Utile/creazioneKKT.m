@@ -1,4 +1,4 @@
-clc, clear, clear all;
+close all; clear; clc;
 
 % CREARE IL KKT dati f, g e h:
 

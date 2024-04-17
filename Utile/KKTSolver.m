@@ -1,4 +1,4 @@
-clc, clear; clear all;
+close all; clear; clc;
 
 syms a x1 x2 l1 ;
 

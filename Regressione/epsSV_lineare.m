@@ -36,9 +36,7 @@ epsilon = 0.5;
 % define the problem
 Q = [ 1 0
       0 0 ];
-  
 c = [0; 0];
-
 D = [-x -ones(l,1)
       x  ones(l,1)];
   

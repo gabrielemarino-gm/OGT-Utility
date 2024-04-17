@@ -1,4 +1,4 @@
-clear; close all; clc;
+close all; clear; clc;
 
 syms x p
 % Definisci la tua disequazione

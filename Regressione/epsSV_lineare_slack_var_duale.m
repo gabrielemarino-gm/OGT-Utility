@@ -1,9 +1,7 @@
 %% Regression problems - 𝜺-SV Lineare Duale
-
 close all; clear; clc;
 
 %% data
-
 data = [ 0    2.5584
     0.5000    2.6882
     1.0000    2.9627
@@ -70,14 +68,11 @@ zp = w.*x + b + epsilon;
 zm = w.*x + b - epsilon;
 
 %% plot the solution
-
 % find support vectors
 sv = [find(lap > 1e-3);find(lam > 1e-3)]; 
 sv = sort(sv);
-
 plot(x,y,'b.',x(sv),y(sv),...
     'ro',x,z,'k-',x,zp,'r-',x,zm,'r-');
-
 legend('Data','Support vectors',...
     'regression','\epsilon-tube',...
     'Location','NorthWest')

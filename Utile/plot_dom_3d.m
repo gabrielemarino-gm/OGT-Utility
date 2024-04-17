@@ -1,4 +1,4 @@
-clear; close all; clc;
+close all; clear; clc;
 
 % Define the inequalities g_i(x) in terms of x(1), x(2), and x(3)
 % Example: For g1(x) = x(1)^2 + x(2)^2 + x(3)^2 - 1 <= 0 (a sphere)

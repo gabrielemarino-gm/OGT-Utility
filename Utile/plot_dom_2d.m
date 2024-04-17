@@ -1,5 +1,4 @@
-clear; close all; clc;
-
+close all; clear; clc;
 
 % Define the inequalities g_i(x) in terms of x(1) and x(2)
 % Example: For g1(x) = x(1) - 2*x(2) <= 0
