@@ -3,19 +3,20 @@ clc, clear, clear all;
 % Date due matrici calcolare il KKT per trovare i punti di equilibrio misti
 syms x1 x2 x3 x4 y1 y2 y3 y4
 
-C1 = [2 0 2; 1 3 -1];
-C2 = [3 1 2; 2 4 1];
+C1 = [4 3 2; 
+      2 1 5];
+C2 = [5 4 3; 
+      7 2 6];
 
-C1r = [0 2; 3 -1];
-C2r = [1 2; 4 1];
+C1r = [3 2; 1 5];
+C2r = [4 3; 2 6];
 
 % MODIFICARE I VETTORI x E y CON LE INCOGNITE CORRETTE
 x = [x1 x2]; 
 y = [y2; y3];
 
-% Funzione obiettivo
+%% PLAYER 1
 f1 = x*C1r*y;
-f2 = x*C2r*y;
 
 disp("Funzione Obiettivo Player 1:");
 disp(f1);
@@ -61,6 +62,8 @@ else
     x_1 = 1;
 end
 
+%% PLAYER 2
+f2 = x*C2r*y;
 
 disp(" ");
 disp(" ");
