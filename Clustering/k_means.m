@@ -1,6 +1,4 @@
-
 %% Clustering Problem - K-Means
-
 clear; close all; clc;
 
 data = [
@@ -84,7 +82,6 @@ function [x, cluster, v] = kmeans1(data, k, InitialCentroids)
                 x(j,:) = mean(data(ind,:),1);
             end
         end
-        
         % Update clusters
         for i = 1 : l
             d = inf;
@@ -95,13 +92,11 @@ function [x, cluster, v] = kmeans1(data, k, InitialCentroids)
                 end
             end
         end
-
         % Update objective function
         v = 0;
         for i = 1 : l
             v = v + norm(data(i,:)-x(cluster(i),:))^2 ;
         end
-        
         % Stopping criterion: 
         % Se la differenza tra il valore della funzione obiettivo di due iterazioni consecutive è minore di 1e-5
         if vold - v < 1e-5 

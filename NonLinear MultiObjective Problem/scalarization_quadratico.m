@@ -4,13 +4,13 @@
 % c1 e c2 sono i coefficienti della parte lineare di ogni obj. fuction
 clc, clear
 
-Q1 = [0 1; 1 0];
+Q1 = [4 0; 0 2];
 Q2 = [2 0; 0 4];
-c1 = [0; 0];
-c2 = [0; -2];
+c1 = [-2; -1];
+c2 = [-4; -2];
 
-A = [0 0];
-b = 0;
+A = [-1 0; 0 -1; 1 1];
+b = [-1 0 2];
 
 % solve the scalarized problem with 0 ≤ alfa1 ≤ 1
 MINIMA=[ ]; % First column: value of alfa1

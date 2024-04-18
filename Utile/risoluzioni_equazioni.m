@@ -16,3 +16,6 @@ x_1
 
 % Per sostituire una variabile con un valore usare:
 % subs(expr, var, value)
+
+% Arrotondare
+% r = round(LAMBDA, 3)

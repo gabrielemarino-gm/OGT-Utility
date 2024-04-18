@@ -3,9 +3,9 @@ close all; clear; clc;
 % CREARE IL KKT dati f, g e h:
 
 syms x1 x2 x3 l1 l2 l3 mu1 mu2 mu3 a
-f = a*(x1+x2-x3)+(1-a)*(x1-x3);
+f = a*(2*x1^2+x2^2-2*x1-x2)+(1-a)*(x1^2+2*x2^2-4*x1-2*x2);
 var = [x1, x2, x3];
-g = [x1-x2-x3, -x1, x3-1];
+g = [-x1+1, -x2, x1+x2-2];
 h = [];
 l = [l1, l2, l3];
 m = [mu1, mu2, mu3];

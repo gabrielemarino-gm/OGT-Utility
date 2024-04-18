@@ -1,8 +1,6 @@
 %% Regression problems - Exercise 6.5 - 𝜺-SV Non Lineare Duale
 close all; clear; clc;
-
 %% data
-
 data = [
    -3.0000    4.58
    -2.8000    7.19
@@ -39,12 +37,9 @@ data = [
 x = data(:,1);
 y = data(:,2);
 l = length(x); % number of points
-
 %% nonlinear regression - dual problem
-
 epsilon = 3 ;
 C = 5;
-
 % define the problem
 X = zeros(l,l);
 for i = 1 : l
@@ -54,7 +49,6 @@ for i = 1 : l
 end
 Q = [ X -X ; -X X ];   
 c = epsilon*ones(2*l,1) + [-y;y]; 
-
 % solve the problem
 sol = quadprog(Q, ...
                c,[],[],...
@@ -64,7 +58,6 @@ sol = quadprog(Q, ...
                C*ones(2*l, 1));
 lap = sol(1:l);
 lam = sol(l+1:2*l);
-
 % compute b
 ind = find(lap > 1e-3 & lap < C-1e-3);
 if isempty(ind)==0
@@ -94,14 +87,11 @@ zp = z + epsilon ;
 zm = z - epsilon ;
 
 %% plot the solution
-
 % find support vectors
 sv = [find(lap > 1e-3);find(lam > 1e-3)]; 
 sv = sort(sv);
-
 plot(x,y,'b.',x(sv),y(sv),...
     'ro',x,z,'k-',x,zp,'r-',x,zm,'r-');
-
 legend('Data','Support vectors',...
     'regression','\epsilon-tube',...
     'Location','NorthWest')
@@ -109,7 +99,6 @@ legend('Data','Support vectors',...
 %% kernel function
 % Indexes of support vectors, support vectors, lambda_-, lambda_+
 [ sv,                         x(sv), y(sv),    lam(sv),  lap(sv)]
-
 function v = kernel(x,y)
     p = 4;
     v = (x'*y + 1)^p;
