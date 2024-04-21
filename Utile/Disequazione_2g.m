@@ -2,10 +2,10 @@ close all; clear; clc;
 
 syms x p
 % Definisci la tua disequazione
-a = 7; % Coefficiente del termine x^2
-b = -16; % Coefficiente del termine x
-c = 8; % Coefficiente del termine costante
-diseq = "minore";
+a = -7; % Coefficiente del termine x^2
+b = 16; % Coefficiente del termine x
+c = -8; % Coefficiente del termine costante
+diseq = "maggiore";
 
 % Converti la disequazione in un'equazione
 eq = a*x^2  + b*x + c  == 0;
