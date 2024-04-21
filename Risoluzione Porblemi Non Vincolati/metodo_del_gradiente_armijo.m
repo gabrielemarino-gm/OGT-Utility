@@ -10,7 +10,7 @@ tolerance = 10^(-6) ;
 
 %% Method: gradient method with inexact line search
 X = [];
-ITER = 0 ;
+ITER = 1;
 x = x0 ;
 
 while true
