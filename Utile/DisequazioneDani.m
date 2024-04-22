@@ -3,7 +3,7 @@ close all; clear; clc;
 syms a;
 
 % Define the inequality expression
-expr = 3 - sqrt(2*a^2 - 2*a + 1) - 3*a;
+expr = (2*a^2 - 2*a + 1)^(1/2) - 3*a + 3;
 
 % Find where the expression equals zero, this defines boundary points
 boundary_points = solve(expr == 0, a, 'Real', true);
