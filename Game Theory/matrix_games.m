@@ -123,6 +123,12 @@ function matrix_games()
     % Definisci A
     A = [C', -ones(n,1)];
     b = zeros(n,1);
+    A = [A; 1 0 0 0];
+    A = [A; 0 1 0 0];
+    A = [A; 0 0 1 0];
+    b = [b; 0.9999];
+    b = [b; 0.9999];
+    b = [b; 0.9999];
     
     % Definisci Aeq
     Aeq = [ones(1,m),0];
@@ -144,6 +150,11 @@ function matrix_games()
     y = lambda.ineqlin;
     disp('y:')
     disp(y)
+
+    disp("SCRIPT MODIFICATO PER FUNZIONARE QUANDO CI SONO ANCHE EQUILIBRI PURI")
+    disp("script modificato per runnare su matrici 3x4; modificare il definisci A")
+    disp("vanno boundate le x a essere <=0.99999 in modo da non finire in equilibri puri")
+    disp("ignorare le y extra appese in fondo al vettore y")
 end
 
 function [C_new] = strictly_dominated_strategies(C)
