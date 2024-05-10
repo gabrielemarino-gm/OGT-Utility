@@ -2,10 +2,9 @@
 close all; clear; clc;
 %% data
 data = [
-   -3.0000    4.58
-   -2.8000    7.19
-   -2.6000    8.22
-   -2.4000   16.06
+   -3.0000    6
+   -2.8000    7.5
+   -2.6000    8.5
    -2.2000   16.42
    -2.0000   17.53
    -1.8000   11.48
@@ -17,8 +16,8 @@ data = [
    -0.6000    7.82
    -0.4000    2.82
    -0.2000    2.71
-         0    1.16
-    0.2000   -1.42
+         0    1
+    0.2000   -1
     0.4000   -3.84
     0.6000   -4.71
     0.8000   -8.15
@@ -29,16 +28,16 @@ data = [
     1.8000   -9.92
     2.0000  -10.50
     2.2000   -7.72
-    2.4000  -11.78
+    2.4000  -12
     2.6000  -10.26
-    2.8000   -7.13
-    3.0000   -2.11];
+    2.8000   -7
+    3.0000   -2];
 
 x = data(:,1);
 y = data(:,2);
 l = length(x); % number of points
 %% nonlinear regression - dual problem
-epsilon = 3 ;
+epsilon = 3.5 ;
 C = 5;
 % define the problem
 X = zeros(l,l);
@@ -98,8 +97,8 @@ legend('Data','Support vectors',...
 
 %% kernel function
 % Indexes of support vectors, support vectors, lambda_-, lambda_+
-[ sv,                         x(sv), y(sv),    lam(sv),  lap(sv)]
+%[ sv,                         x(sv), y(sv),    lam(sv),  lap(sv)]
 function v = kernel(x,y)
-    p = 4;
-    v = (x'*y + 1)^p;
+    p = 2;
+    v = exp(-norm(x-y)^p);
 end
