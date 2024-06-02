@@ -7,12 +7,12 @@ clear; close all; clc;
 Q = [6 1 0 2; 
      1 2 0 0;
      0 0 4 2;
-     2 0 2 8]
+     2 0 2 8];
 
 c = [ -1 8 6 9]';
 
 disp('Eigenvalues of Q:')
-eig(Q)
+disp(eig(Q))
 
 %% Parameters
 
@@ -52,9 +52,12 @@ for ITER = 1:10
     % update search direction
     d_prev = d; 
 end
-X
+disp('X:')
+disp(X)
+disp("Iterazioni:")
+disp(ITER)
 disp('Gradient Norm')
-norm(g)
+disp(norm(g))
 
 
 

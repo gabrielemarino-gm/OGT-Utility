@@ -1,8 +1,22 @@
 close all; clear; clc;
 
-syms x1 x2 x3 p a
-f = x1^3+x2;
-H = hessian(f, [x1, x2]);
-e = eig(H);
+syms x1 x2 x3 x4 p a
+% MODIFICARE
+    f = 3*x1^2 + x2^2 +2+x3^2 + 4*x4^2 + x1*x2 + 2*x1*x4 + 2*x3*x4 - x1 + 8*x2 + 6*x3 +9*x4;
+    var = [x1, x2, x3, x4];
 
-H, e
+H = hessian(f, var);
+
+% Bisogna convertire H in una semplice matrice
+Hes = zeros(length(var), length(var));
+for i = 1:length(var)
+    for j = 1:length(var)
+        Hes(i, j) = H(i, j);
+    end
+end
+
+% Print
+disp("Hessiana")
+disp(Hes)
+disp("Autovalori HEssiana")
+disp(eig(Hes))
