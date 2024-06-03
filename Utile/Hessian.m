@@ -2,8 +2,8 @@ close all; clear; clc;
 
 syms x1 x2 x3 x4 p a
 % MODIFICARE
-    f = 3*x1^2 + x2^2 +2+x3^2 + 4*x4^2 + x1*x2 + 2*x1*x4 + 2*x3*x4 - x1 + 8*x2 + 6*x3 +9*x4;
-    var = [x1, x2, x3, x4];
+    f = x1^2 + x2^2 - x1*x2 - 3*x1 -4*x2 - 5*x3;
+    var = [x1, x2, x3];
 
 H = hessian(f, var);
 
@@ -18,5 +18,5 @@ end
 % Print
 disp("Hessiana")
 disp(Hes)
-disp("Autovalori HEssiana")
+disp("Autovalori Hessiana")
 disp(eig(Hes))

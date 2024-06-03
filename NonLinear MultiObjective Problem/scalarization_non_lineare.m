@@ -9,11 +9,11 @@
 clc, clear, clear all;
 
 MINIMA = [ ]; % First column: value of alfa1
-for alfa1 = 0 : 0.01 : 1
-    fun = @(x) (alfa1 + x(1) - alfa1*x(1))*x(1) + (-2*alfa1*x(2) + 4*x(2))*x(2);
+for alfa1 = 0 : 0.1 : 1
+    fun = @(x) (alfa1*(x(1)-2*x(2)) + (1-alfa1)*(-x(1)+3*x(2)));
     nonlcon = @(x) const(x);
     x0 = [0,0]';
-    [x,fval,exitflag,output,lambda] = fmincon(fun,x0,[ ],[ ],[ ],[ ],[ ],[ ],nonlcon) ;
+    [x, fval, exitflag, output, lambda] = fmincon(fun, x0, [ ], [ ], [ ], [ ], [ ], [ ], nonlcon);
     MINIMA = [MINIMA; alfa1, x'];
 end
 
@@ -24,7 +24,7 @@ disp(MINIMA);
 plot(MINIMA(:,2),MINIMA(:,3));
 
 % Funzione Ausiliaria
-function [C,Ceq] = const(x)
-    C = x(1)^2 + 2*x(2)^2 - 4; % se più vincoli metterli in un vettore
+function [C, Ceq] = const(x)
+    C = [-x(1) + 2*x(2) + 1, 2*x(1) - 7*x(2) + 4, x(2) - 4]; % se più vincoli metterli in un vettore
     Ceq = [ ];
 end
