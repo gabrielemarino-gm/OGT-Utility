@@ -8,8 +8,10 @@ function bimatrix_games()
     clc, clear all;
 
     % Matrici di gioco
-    P1 = [2 0 2; 1 3 -1];
-    P2 = [3 1 2; 2 4 1];
+    P1 = [5 4 3; 
+          7 5 2];
+    P2 = [4 3 2; 
+          2 1 5];
     
     stable = false;
     
