@@ -4,13 +4,13 @@ clc, clear, clear all;
 syms x1 x2 x3 x4 y1 y2 y3 y4
 
 % MODIFICARE
-    C1 = [5 4 3; 
-          7 5 2];
-    C2 = [4 3 2; 
-          2 1 5];
+    C1 = [2 0 2; 
+          1 3 -1];
+    C2 = [3 1 2; 
+          2 4 1];
     
-    C1r = [4 3; 5 2];
-    C2r = [3 2; 1 5];
+    C1r = [0 2; 3 -1];
+    C2r = [1 2; 4 1];
     
     % MODIFICARE I VETTORI x E y CON LE INCOGNITE CORRETTE
     x = [x1 x2]; 
@@ -48,6 +48,7 @@ sol1_str = char(sol1); % Converti sol1 in una stringa
 
 % Sostituisco a f1: y(1) = 0, e poi controllo la derivata se è positiva o
 % negativa, dato che si tratta di una retta (Il suo coefficente angolare)
+disp("BEST RESPONSE MAPPING:");
 if (diff(subs(f1, y(1), 0), x(1)) >= 0) % Se la retta ha pendenza positiva
     disp("{ B1(" + char(y(1)) + ") = 0,          per " + char(y(1)) + " = [0, " + sol1_str + ")"); 
     x_0 = 0;
@@ -100,6 +101,7 @@ eq2 = diff(f2, y(1)) == 0;
 sol2 = solve(eq2, x(1));
 sol2_str = char(sol2); % Converti sol2 in una stringa
 
+disp("BEST RESPONSE MAPPING:");
 if (diff(subs(f2, x(1), 0), y(1)) >= 0) % Se la retta ha pendenza positiva
     disp("{ B2(" + char(x(1)) + ") = 0,          per " + char(x(1)) + " = [0, " + sol2_str + ")");
     y_0 = 0;
