@@ -2,10 +2,12 @@ close all; clear; clc;
 
 syms x1 x2 x3 x4 p a
 % MODIFICARE
-    f = x1^2 + x2^2 - x1*x2 - 3*x1 -4*x2 - 5*x3;
-    var = [x1, x2, x3];
+    f = a*(x1*x2)+(1-a)*(x1^2+2*x2^2-2*x2);
+    var = [x1, x2];
 
 H = hessian(f, var);
+H
+eig(H)
 
 % Bisogna convertire H in una semplice matrice
 Hes = zeros(length(var), length(var));
