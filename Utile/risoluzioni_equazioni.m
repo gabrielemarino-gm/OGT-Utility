@@ -21,3 +21,7 @@ x_1
 % r = round(LAMBDA, 3)
 
 % ax^2 + bx + c == a (x-x1) (x-x2)
+
+syms l a x1 x2
+sis = [l == (1-a)*(3*a - 1), x1 == (1+l-a)/2*a, x2 == l/a*(1-a)];
+solve(sis);

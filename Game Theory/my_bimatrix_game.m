@@ -36,7 +36,7 @@ f1 = expand(f1);
 disp(f1);
 
 % mettere in evidenza la funzione obiettivo x(1)
-disp("Mettere in evidenza la funzione obiettivo x(1)");
+disp("Mettere in evidenza la funzione obiettivo " +  char(x(1)));
 f1 = collect(f1, x(1));
 disp(f1);
 
@@ -58,7 +58,7 @@ else
 end
 
 disp("{ B1(" + char(y(1)) + ") = [0, 1],         per " + char(y(1)) + " = " + sol1_str);
-x_sol = sol1;
+y_sol = sol1;
 
 % Sostituisco a f1: y(1) = 1
 if (diff(subs(f1, y(1), 1), x(1)) >= 0) % Se la retta ha pendenza positiva
@@ -111,7 +111,7 @@ else
 end
 
 disp("{ B2(" + char(x(1)) + ") = [0, 1],         per " + char(x(1)) + " = " + sol2_str);
-y_sol = sol2;
+x_sol = sol2;
 
 if (diff(subs(f2, x(1), 1), y(1)) >= 0) % Se la retta ha pendenza positiva
     disp("{ B2(" + char(x(1)) + ") = 0,          per " + char(x(1)) + " = (" + sol2_str +  ", 1]");
@@ -123,14 +123,15 @@ end
 
 
 % Risolti i sistemi di equazioni, si ottengono i punti di equilibrio misti per i due giocatori. 
-
-disp(" ");
 disp(" ");
 disp("Le coppie di punti (" + char(x(1)) + ", " + char(y(1)) + ") tale per cui " + char(x(1)) + " € B1(" + char(y(1)) + ") e " + char(y(1)) + " € B2(" + char(x(1)) + ") sono:");
 disp(char(x(1)) + " = " + x_0 + ", " + char(y(1)) + " = " + y_0 );
 disp(char(x(1)) + " = " + char(x_sol) + ", " + char(y(1)) + " = " + char(y_sol));
 disp(char(x(1)) + " = " + x_1 + ", " + char(y(1)) + " = " + y_1);
 
+disp(" ");
+disp(" ");
+disp(" ");
 disp(" ");
 disp(" ");
 mixedKKT(C1, C2);
