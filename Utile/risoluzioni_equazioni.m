@@ -19,3 +19,5 @@ x_1
 
 % Arrotondare
 % r = round(LAMBDA, 3)
+
+% ax^2 + bx + c == a (x-x1) (x-x2)

@@ -2,7 +2,8 @@ close all; clear; clc;
 
 syms x1 x2 x3 x4 p a
 % MODIFICARE
-    f = a*(x1*x2)+(1-a)*(x1^2+2*x2^2-2*x2);
+    %f = 3*x1^2 + x2^2 + 2*x3^2 + 4*x4^2 + x1*x2 + 2*x1*x4 + 2*x3*x4 - x1 + 8*x2 + 6*x3 + 9*x4;
+    f = a*x1^2 + (1-a)*(-x1+x2^2);
     var = [x1, x2];
 
 H = hessian(f, var);
