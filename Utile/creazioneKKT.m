@@ -4,7 +4,7 @@ close all; clear; clc;
 
 syms x1 x2 x3 l1 l2 l3 mu1 mu2 mu3 a
 % MODIFICARE
-    f = a*(x1-2*x2)+(1-a)*(-x1+2*x2);
+    f = a*(x1-2*x2)+(1-a)*(-x1+3*x2);
     var = [x1, x2];
     g = [-x1+2*x2+1, 2*x1-7*x2+4, x2-4];
     h = [];
