@@ -1,8 +1,11 @@
 clear; close all; 
 
 % Definizione del problema di ottimizzazione
-Q = [6 0 -4 0; 0 6 0 -4; -4 0  6 0; 0 -4 0 6]
-c = [ 1 -1 2 -3]';
+Q = [4     0     1    -1
+     0     6     2     1
+     1     2     8     1
+    -1     1     1     6]
+c = [ -3 -4 -5 0]';
 
 % Autovettori e autovalori di Q
 disp('eigenvalues of  Q:')

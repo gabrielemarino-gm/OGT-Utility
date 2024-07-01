@@ -3,22 +3,21 @@ clear; close all; clc;
 
 %% data 
 global Q c A b eps;
+Q = [ 2 -1 0 ;-1 2 1; 0 1 2 ] ;
+c = [ -3 ; -4; -5 ] ;
+A = [2 1 1;-1 0 0; 0 1 0 ;0 0 -1 ]; b=[20;-2;3;-4 ];
 
-Q = [ 1 0 ; 0 2 ] ;
-c = [ -3 ; -4 ] ;
-A = [-2 1 ; 1 1 ; 0 -1 ];
-b = [ 0 ; 4 ; 0 ];
 
 delta = 1e-3 ;
 tau = 0.5 ;
 eps1 = 1 ;
-x0 = [ 1 ; 1 ];
+x0 = [ 3; 2; 5];
 
 %% Method
 x = x0;
 eps = eps1 ;
 m = size(A,1) ;
-SOL = []
+SOL = [];
 
 while true
     [x, pval] = fminunc(@logbar,x);
@@ -31,7 +30,8 @@ while true
     end
 end
 fprintf('\t eps \t x(1) \t x(2) \t gap \t  pval \n\n');
-SOL
+disp("SOL = [eps, x', gap, pval]");
+disp(SOL);
 
 %% logarithmic barrier function
 function v = logbar(x)

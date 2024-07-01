@@ -2,21 +2,22 @@ close all; clear; clc;
 
 % CREARE IL KKT dati f, g e h:
 
-syms x1 x2 x3 l1 l2 l3 mu1 mu2 mu3 a
+syms x1 x2 x3 x4 l1 l2 l3 l4 mu1 mu2 mu3 a
 % MODIFICARE
-    f = a*(x1-2*x2)+(1-a)*(-x1+3*x2);
-    var = [x1, x2];
-    g = [-x1+2*x2+1, 2*x1-7*x2+4, x2-4];
+    f = 2*x1^2 + 3*x2^2 + 4*x3^2 + 3*x4^2 + x1*x3 - x1*x4 + 2*x2*x3 + x2*x4 + x3*x4 - 6*x1 - 3*x2 - 8*x3;;
+    var = [x1, x2, x3, x4];
+    g = [];%[2*x1+x2+x3-20, -x1+2, x2-3, -x3+4];
     h = [];
-    l = [l1, l2, l3];
+    l = [l1, l2, l3, l4];
     m = [mu1, mu2, mu3];
 
 ng = length(g);
 nh = length(h);
 
 % Calcolare il gradiente di f
-grad_f = gradient(f, var);
+grad_f = expand(gradient(f, var));
 eq = grad_f;
+
 
 for i = 1:ng
     grad_g = gradient(g(i), var);
